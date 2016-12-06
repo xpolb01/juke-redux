@@ -9,6 +9,9 @@ import Artist from './components/Artist';
 import Songs from './components/Songs';
 import NewPlaylistContainer from './containers/NewPlaylistContainer';
 import Playlist from './components/Playlist';
+import store from './store';
+import {setLyrics} from './action-creators/lyrics';
+
 
 ReactDOM.render(
   <Router history={hashHistory}>
