@@ -7,19 +7,30 @@ import axios from 'axios';
 import AUDIO from '../audio';
 
 
-export const play = function() {
+const startPlaying = () => ({ type: START_PLAYING });
+
+const stopPlaying = () => ({ type: STOP_PLAYING });
+
+const setCurrentSong = (currentSong) => ({
+  type: SET_CURRENT_SONG,
+  currentSong
+});
+
+const setCurrentSongList = (currentSongList) => ({
+  type: SET_LIST,
+  currentSongList
+});
+
+export const play = () => dispatch => {
   AUDIO.play()
-  return {
-    type: START_PLAYING
-    }
+  dispatch(startPlaying())
 };
 
-export const pause = function() {
+export const pause = () => dispatch => {
   AUDIO.pause()
-  return {
-    type: STOP_PLAYING,
-  }
+  dispatch(stopPlaying())
 };
+
 
 export const load = (currentSong, currentSongList) => dispatch => {
   AUDIO.src = currentSong.audioUrl;

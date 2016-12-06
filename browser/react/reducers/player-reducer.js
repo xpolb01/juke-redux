@@ -33,7 +33,7 @@ export default function (state = initialPlayerState, action) {
     case SET_LIST:
       newState.currentSongList = action.currentSongList;
       break;
-      
+
     default:
       return state;
 
