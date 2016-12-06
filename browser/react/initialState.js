@@ -9,7 +9,7 @@ const initialState = {
   progress: 0,
   playlists: [],
   selectedPlaylist: {},
-  songs: []
+  songs: [],
 };
 
 export default initialState;
